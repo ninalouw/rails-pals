@@ -7,7 +7,7 @@
 // https://github.com/twbs/bootstrap-rubygem/blob/master/assets/stylesheets/bootstrap/_variables.scss
 
 $theme-colors: (
-  primary: $yellow,
+  primary: $orange,
   success: $green,
   danger: $red,
 );
@@ -39,7 +39,7 @@ button.btn {
 }
 
 .btn.cta {
-  @include button-outline-variant($white, $yellow);
+  @include button-outline-variant($white, $orange);
 }
 
 @media (min-width: 992px) {
