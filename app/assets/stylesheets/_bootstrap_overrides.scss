@@ -1,0 +1,50 @@
+@import 'bootstrap';
+@import 'bootstrap/functions';
+@import 'bootstrap/variables';
+@import 'mixins';
+@import 'colours';
+
+// https://github.com/twbs/bootstrap-rubygem/blob/master/assets/stylesheets/bootstrap/_variables.scss
+
+$theme-colors: (
+  primary: $yellow,
+  success: $green,
+  danger: $red,
+);
+
+$enable-rounded: false;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px
+);
+
+$font-family-sans-serif: "Source Sans Pro Regular", Helvetica, Arial, sans-serif;
+$font-family-serif: "Sofia Pro Light", Georgia, serif;
+
+// $headings-font-weight: 400;
+
+$navbar-padding-y: 2rem;
+
+button.btn {
+  cursor: pointer;
+}
+
+.btn.cta {
+  @include button-outline-variant($white, $yellow);
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
