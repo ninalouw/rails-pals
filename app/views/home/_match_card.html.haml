@@ -1,0 +1,35 @@
+.container
+  %section#match-card
+    %div.d-flex.justify-content-center
+      %h2 Find your new best pal
+    .row.match-duo
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.card-mobile
+        .card.w-55
+          = image_tag "/assets/brodie.jpg", :class => 'card-img-top img-fluid', :alt => 'card image'
+          .card-body.brodie-card
+            %h4{class:'card-title'} Brodie
+            %h6{class:'card-subtitle mb-2 text-left'}
+              %span Retriever
+              %span
+                %i{class: 'fas fa-map-marker-alt'}
+                West End
+            %p{class:'card-text'} “Hello!  Now is the time for walk. I love saying hello to you. Do you want to play fetch ball with me?  I want to play fetch ball with you.”
+            %p{class:'card-text lead'} Looking for
+            %p{class:'card-text'} Much attention. many treats. much playing
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.card-mobile
+        .card.w-55
+          = image_tag "/assets/nicole.jpg", :class => 'card-img-top img-fluid', :alt => 'card image'
+          .card-body.brodie-card
+            %h4{class:'card-title'} Nicole
+            %h6{class:'card-subtitle mb-2 text-left'}
+              %span Dog-lover
+              %span
+                %i{class: 'fas fa-map-marker-alt'}
+                Yaletown
+            %p{class:'card-text'} “Looking for a lovable dog who enjoys a long walk and lots of playing. I used to have a retriever and love playing fetch in the park.”
+            %p{class:'card-text lead'} Looking for
+            %p{class:'card-text'} A medium-sized, high-energy dog for active walks.
+    %div.d-flex.justify-content-center
+      %h3 Become a Pooch Pal today, meet your new pal tomorrow
+    %div.d-flex.justify-content-center
+      %button{type:"submit", class: 'btn btn-primary my-2 my-sm-0'} Find a dog today
