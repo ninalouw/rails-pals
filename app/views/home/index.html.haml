@@ -1,0 +1,24 @@
+%section#main-page-header
+  %main
+    .container
+      .row
+        .col-12
+          %h1 Walk a new friend today
+      .row
+        .col-12.d-flex.justify-content-center
+          %hr.w-75
+      .row
+        .col-12.col-md-10.offset-md-1
+          %p
+            Search local dogs to find the perfect playtime partner. We connect dog lovers, dog owners and rescue shelters so that everyone gets more walks.
+          .row
+            .col-12
+              %form{class:"form-inline"}
+                %label{class:"sr-only", for:"inlineFormInput"} Name
+                %input{type:"text", class:"form-control mb-2 mr-sm-2 mb-sm-0", id:"inlineFormInput", placeholder:"Jane Doe"}
+                .invalid-input
+                %label{class:"sr-only", for:"inlineFormInput"} Email
+                %input{type:"email", class:"form-control mb-2 mr-sm-2 mb-sm-0", id:"inlineFormInput", placeholder:"jane@dogs.com"}
+                .invalid-input
+                %button{type:"submit", class: 'btn btn-primary my-2 my-sm-0'} Get Started
+= render 'for_dogs'

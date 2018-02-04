@@ -1,0 +1,122 @@
+@import 'bootstrap/functions';
+@import 'mixins';
+@import 'colours';
+
+// https://github.com/twbs/bootstrap-rubygem/blob/master/assets/stylesheets/bootstrap/_variables.scss
+
+$theme-colors: (
+  primary: $orange,
+  secondary: $turquoise,
+  success: $green,
+  danger: $red,
+);
+
+$enable-rounded: false;
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 4),
+  7: ($spacer * 5),
+  8: ($spacer * 6)
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px
+);
+
+$font-family-sans-serif: "Source Sans Pro Regular", Helvetica, Arial, sans-serif;
+$font-family-serif: "Sofia Pro Light", Georgia, serif;
+
+$headings-font-weight: 300;
+
+$navbar-padding-y: 5rem;
+
+$custom-select-indicator-color: $orange;
+
+// $headings-font-weight: 400;
+
+$navbar-padding-y: 2rem;
+
+@import 'bootstrap/variables';
+@import 'bootstrap';
+
+@font-face {
+    font-family: 'Sofia Pro Light';
+    src: font-url('sofiapro-light-webfont.woff2') format('woff2'),
+         font-url('sofiapro-light-webfont.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Source Sans Pro Light';
+    src: font-url('sourcesanspro-light-webfont.woff2') format('woff2'),
+         font-url('sourcesanspro-light-webfont.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Source Sans Pro Light Italic';
+    src: font-url('sourcesanspro-lightit-webfont.woff2') format('woff2'),
+         font-url('sourcesanspro-lightit-webfont.woff') format('woff');
+    font-weight:normal;
+    font-style:italic;
+}
+@font-face {
+    font-family: 'Source Sans Pro Regular';
+    src: font-url('sourcesanspro-regular-webfont.woff2') format('woff2'),
+         font-url('sourcesanspro-regular-webfont.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Source Sans Pro Semibold';
+    src: font-url('sourcesanspro-semibold-webfont.woff2') format('woff2'),
+         font-url('sourcesanspro-semibold-webfont.woff') format('woff');
+    font-weight:bold;
+    font-style:normal;
+}
+
+button.btn {
+  cursor: pointer;
+}
+
+.btn.cta {
+  @include button-outline-variant($white, $orange);
+  padding-top: 0.45rem;
+  padding-bottom: 0.35rem;
+  padding-left: 1.5 rem;
+  padding-right: 1.5 rem;
+}
+
+@include media-breakpoint-up(lg) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .btn.cta.cta-top { width: 50%; }
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}

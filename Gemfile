@@ -33,6 +33,7 @@ gem 'popper_js', '~> 1.12.3'
 gem 'font-awesome-rails'
 gem 'cowsay'
 gem 'faker'
+gem 'haml'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
