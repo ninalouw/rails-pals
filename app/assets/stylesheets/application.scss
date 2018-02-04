@@ -67,21 +67,35 @@ hr {
 }
 
 footer {
-    background-color: $white;
-    border: $orange solid 1px;
-    padding:$margin;
-    margin-top:$margin;
-    h4 {
-        padding-right:10px;
-    }
-    a {
-        .fa {
-            color: $orange;
-            padding:10px;
+    background-color: $light-grey;
+    font-size: 14px;
+    padding: 90px 0 45px 0;
+    .nav {
+        a {
+            color: $borrower-blue;
+            padding: 0 .5rem 0 0;
             &:hover {
-                cursor: pointer;
-                color: $yellow;
+                text-decoration: underline;
             }
         }
+    }
+    .social {
+        div:first-child {
+            color: $borrower-blue;
+            padding: 12px 0;
+        }
+        a {
+            padding: 0 .5rem 0 0;
+        }
+    }
+    .copyright {
+        color: $borrower-blue;
+        a {
+            color: $borrower-blue;
+        }
+        text-align: center;
+    }
+    .row:first-child {
+        margin-bottom: 0.7rem;
     }
 }

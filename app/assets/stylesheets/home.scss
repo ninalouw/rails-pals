@@ -11,6 +11,7 @@ $margin: 60px;
     h1 {
         color: $white;
         font-size: 3.5rem;
+        font-weight: bold;
     }
     hr {
         background-color: $orange;
@@ -44,6 +45,24 @@ $margin: 60px;
             margin-bottom:10px;
             background-color:$off-white;
             border: 1px solid $off-white;
+        }
+    }
+}
+#how-it-works {
+    .how-it-works-quad {
+        margin-top: $margin;
+        margin-bottom: $margin;
+        .card {
+            align-items: center;
+            margin-bottom:10px;
+            background-color:$white;
+            border: 1px solid $white;
+            .fas {
+                color: $orange;
+                &:hover {
+                    color: $yellow;
+                }
+            }
         }
     }
 }

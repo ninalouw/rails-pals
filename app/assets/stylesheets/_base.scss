@@ -55,6 +55,13 @@ $navbar-padding-y: 2rem;
 @import 'bootstrap/variables';
 @import 'bootstrap';
 
+@import 'fontawesome-all';
+@import 'fa-brands';
+@import 'fa-light';
+@import 'fa-regular';
+@import 'fa-solid';
+@import 'fontawesome';
+
 @font-face {
     font-family: 'Sofia Pro Light';
     src: font-url('sofiapro-light-webfont.woff2') format('woff2'),

@@ -1,0 +1,31 @@
+%footer
+  .container-fluid.px-md-5
+    .row
+      .col-12.col-lg-4.order-4.order-lg-1.d-flex.justify-content-center.align-items-center
+        %ul.nav.align-items-center.justify-content-center
+          %li.nav-item= link_to 'About Us', class: 'nav-link'
+          %li.nav-item= link_to 'FAQ', class: 'nav-link'
+          %li.nav-item= link_to 'Contact us', class: 'nav-link'
+      .col-12.col-lg-4.order-2.d-flex.align-items-center.justify-content-center
+        .text-center
+          %h5.mt-2
+            Made with
+            %i{class: 'fa fa-heart'}
+            in Vancouver
+      .col-12.col-lg-4.order-3.d-flex.justify-content-center
+        .social.row.d-flex.justify-content-center.align-items-center.w-100
+          .col-12.col-lg-8.text-center.text-lg-right See what we're up to
+          .col-12.col-lg-4.text-center.text-lg-left
+            = link_to 'https://www.instagram.com/poochpals', { target: '_blank', rel: 'noopener noreferrer' } do
+              %i{class: 'fab fa-2x fa-instagram'}
+            = link_to 'https://www.facebook.com/poochpals', { target: '_blank', rel: 'noopener noreferrer' } do
+              %i{class: 'fab fa-2x fa-facebook-f'}
+    .row
+      .col-12
+        .copyright
+          Copyright
+          = Date.today.strftime('%Y')
+          Pooch Pals
+          %ul.nav.justify-content-center
+            %li.nav-item= link_to 'Terms & Conditions', class: 'nav-link'
+            %li.nav-item= link_to 'Privacy Policy', class: 'nav-link'
