@@ -25,19 +25,29 @@ $margin: 60px;
     margin: 0;
     padding: 0;
 }
-
-.navbar-light .navbar-nav .nav-link {
-    color:black;
+nav {
+    background-color: $white;
 }
+hr {
+    color:$orange solid 1px;
+    @include soft-shadow;
+}
+
 .navbar-toggler {
   border: 1px solid $orange;
 }
-.nav-link{
-    width:10rem;
+.nav-item {
+    width:8rem;
+    .nav-link {
+        color: black;
+        &:hover {
+            color: $orange;
+            text-decoration: none;
+        }
+    }
 }
-.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus{
-    color: $orange;
-}
+
+
 
 .navbar-brand {
   padding-bottom: 0.7rem;

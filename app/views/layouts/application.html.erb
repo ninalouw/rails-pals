@@ -26,7 +26,10 @@
 
   <body>
     <%= render 'layouts/navigation' %>
-    <%= render 'layouts/flash_messages', flash: flash %>
+    <% if notice %><div class="alert alert-info"><%= notice %></div><% end %>
+    <% if alert %><div class="alert alert-warning"><%= alert %></div><% end %>
+
+    <%#= render 'layouts/flash_messages', flash: flash %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
