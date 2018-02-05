@@ -4,7 +4,7 @@
 $margin: 60px;
 @import 'mixins';
 #main-page-header {
-    background: url('hero.jpg') no-repeat;
+    background-image: image-url("hero.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     padding: 130px 200px 130px 0px;
