@@ -5,7 +5,8 @@
     %ul.navbar-nav.mr-auto
       %li.nav-item= link_to 'Dashboard', class:'nav-link'
       %li.nav-item= link_to 'Inbox', class:'nav-link'
-      %li.nav-item= link_to 'Profile', class:'nav-link'
+      %li.nav-item= link_to 'Create Profile', new_profile_path, class:'nav-link'
+      -# %li.nav-item= link_to 'View Profile', profile_path(@profile), class:'nav-link'
       %li.nav-item= link_to 'Favourites', class:'nav-link'
       %li.nav-item= link_to 'Settings', class:'nav-link'
 
@@ -15,8 +16,8 @@
       .col-12.col-lg-6
         #welcome-user-row
           %h1
-            Welcome, User
-            -# = "#{current_client.firstname}!"
+            Welcome
+            -# = "#{current_user.full_name}!"
             %h6 Here are your latest messages
     .row.dashboard-duo
       .col-lg-6.col-md-6.col-sm-6.col-xs-6.card-mobile

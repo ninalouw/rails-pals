@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="col-md-12 col-lg-12">
+    <%= form_for(@profile, html: { multipart: true, class: 'form-horizontal' }) do |p| %>
+        <% if @profile.errors.any? %>
+        <div class="bg-warning" id="error_explanation">
+        <h6><%= pluralize(@profile.errors.count, "error") %> prohibited this announcement from being saved:</h6>
+            <ul>
+            <% @profile.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+            </ul>
+        </div>
+        <% end %>
+
+        <div class="form-group row">
+            <div class="col-md-6 col-lg-6">
+            <%= p.label :screen_name, class: 'control-label' %>
+            <%= p.text_field :screen_name, class: 'form-control'%>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 col-lg-6">
+                <%= p.label :image, class: 'control-label' %>
+                <%= p.file_field :image %>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 col-lg-6">
+            <%= p.label :description, class: 'control-label' %>
+            <%= p.text_area :description, class: 'form-control'%>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 col-lg-6">
+                <%= p.label :occupation, class: 'control-label' %>
+                <%= p.text_area :occupation, class: 'form-control'%>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6 col-lg-6">
+            <%= p.label :suburb, class: 'control-label' %>
+            <%= p.text_area :suburb, class: 'form-control'%>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6 col-lg-6">
+                <%= p.label :postal_code, class: 'control-label' %>
+                <%= p.text_area :postal_code, class: 'form-control'%>
+            </div>
+        </div>
+
+
+        <%= p.submit class: 'btn btn-primary' %>
+        <% end %>
+    </div>
+</div>

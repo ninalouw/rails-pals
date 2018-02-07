@@ -20,7 +20,7 @@
                 %label{class:"sr-only", for:"inlineFormInput"} Email
                 %input{type:"email", class:"form-control mb-2 mr-sm-2 mb-sm-0", id:"inlineFormInput", placeholder:"jane@dogs.com"}
                 .invalid-input
-                %button{type:"submit", class: 'btn btn-primary my-2 my-sm-0'} Get Started
+                = link_to 'Get Started', new_user_registration_path, class:'btn btn-primary my-2 my-sm-0'
 = render 'for_dogs'
 = render 'how_it_works'
 = render 'match_card'

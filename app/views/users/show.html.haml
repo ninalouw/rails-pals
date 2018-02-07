@@ -1,2 +1,52 @@
+%nav#user-nav.navbar.navbar-expand-lg.navbar-light.bg-faded
+  %button.navbar-toggler{type:'button', 'data-toggle':'collapse', 'data-target':'#user-navbar','aria-controls':'navbarNav', 'aria-expanded':'false', 'aria-label':'Toggle navigation'}
+    %span.navbar-toggler-icon
+  #user-navbar.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item= link_to 'Dashboard', class:'nav-link'
+      %li.nav-item= link_to 'Inbox', class:'nav-link'
+      %li.nav-item= link_to 'Profile', class:'nav-link'
+      %li.nav-item= link_to 'Favourites', class:'nav-link'
+      %li.nav-item= link_to 'Settings', class:'nav-link'
 
+%section#user-account
+  .container-fluid.px-md-5
+    .row
+      .col-12.col-lg-6
+        #welcome-user-row
+          %h1
+            Welcome
+            -# = "#{current_user.full_name}!"
+            %h6 Here are your latest messages
+    .row.dashboard-duo
+      .col-lg-6.col-md-6.col-sm-6.col-xs-6.card-mobile
+        .card
+          %h3{class:'card-header'} Your Messages
+          .card-block.row.d-flex.justify-content-center.align-items-center
+            .card.w-10.col-lg-5.col-md-5.col-sm-5.col-xs-12
+              %h4{class:'card-title'} The title
+              %p{class:'lead'} From: Message sender
+              %p{class:'card-text'} The body of your message.The body of your message.
+              %button{class: 'btn btn-secondary'} Reply
+            .card.w-10.col-lg-5.col-md-5.col-sm-5.col-xs-12
+              %h4{class:'card-title'} The title
+              %p{class:'lead'} From: Message sender
+              %p{class:'card-text'} The body of your message.The body of your message.
+              %button{class: 'btn btn-secondary'} Reply
+      .col-lg-6.col-md-6.col-sm-6.col-xs-6.card-mobile
+        .card
+          %h3{class:'card-header'} Recently Added Dogs
+          .card-block.row.d-flex.justify-content-center.align-items-center
+            .card.w-10.col-lg-5.col-md-5.col-sm-5.col-xs-12.m
+              = image_tag "owner-dog.jpg", :class => 'card-img-top img-circle img-fluid', :alt => 'card image'
+              .card-body
+                %h4{class:'card-title'} Dog Name
+                %p{class:'lead'} Dog description
+                %button{class: 'btn btn-secondary'} View Dog
+            .card.w-10.col-lg-5.col-md-5.col-sm-5.col-xs-12.m
+              = image_tag "owner-dog.jpg", :class => 'card-img-top img-circle img-fluid', :alt => 'card image'
+              .card-body
+                %h4{class:'card-title'} Dog Name
+                %p{class:'lead'} Dog description
+                %button{class: 'btn btn-secondary'} View Dog
 

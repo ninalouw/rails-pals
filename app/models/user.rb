@@ -3,4 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_one :profile, dependent: :nullify
+
+  private
+
+  def downcase_email
+    email.downcase! if email.present?
+  end
+
+  def full_name
+    "#{first_name} #{last_name}".strip.squeeze(' ').titleize
+  end
 end
