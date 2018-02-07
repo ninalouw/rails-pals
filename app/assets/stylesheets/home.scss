@@ -101,3 +101,16 @@ $margin: 60px;
         }
     }
 }
+/* User dashboard - move to own stylesheet */
+#user-account {
+    margin-top: $margin;
+    margin-bottom: $margin;
+}
+#user-nav {
+    background-color: $borrower-blue;
+    .nav-item {
+        a {
+            color: white;
+        }
+    }
+}

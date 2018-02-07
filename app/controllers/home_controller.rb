@@ -3,4 +3,8 @@ class HomeController < ApplicationController
         @title = "Pooch Pals"
         render :index
     end
+
+    def dashboard
+        render :dashboard
+    end
 end

@@ -8,7 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  config.secret_key = 'f804f861408150a496a94b1850c915e62413a79a5a1412b4752fc5dd6a531869e21fc9a8711482638b8df72d4599694aa87afc8035a28cbdefc75353fddf73e7'
+  # config.secret_key = 'f804f861408150a496a94b1850c915e62413a79a5a1412b4752fc5dd6a531869e21fc9a8711482638b8df72d4599694aa87afc8035a28cbdefc75353fddf73e7'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -17,7 +17,7 @@ Devise.setup do |config|
   config.mailer_sender = 'ninalouw@mac.com'
 
   # Configure the class responsible to send e-mails.
-  config.mailer = 'Devise::Mailer'
+  # config.mailer = 'Devise::Mailer'
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
@@ -116,7 +116,7 @@ Devise.setup do |config|
   # config.send_email_changed_notification = false
 
   # Send a notification email when the user's password is changed.
-  config.send_password_change_notification = true
+  # config.send_password_change_notification = true
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
