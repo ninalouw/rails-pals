@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get "/dashboard" => "home#dashboard", as: :dashboard_path
 
   resources :profiles
+  resources :dogs
 end

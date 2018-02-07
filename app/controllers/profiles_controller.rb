@@ -3,13 +3,10 @@ class ProfilesController < ApplicationController
   before_action :find_profile, only: [:show, :edit, :update, :destroy]
 #   before_action :authorize_access, only: [:show, :edit, :update, :destroy]
 
-  # ACTIONS
-  # creates new gallery, displays a form
   def new
     @profile = Profile.new
   end
 
-  # handles creating the gallery after the form has been submitted
   def create
     @profile = Profile.new(profile_params)
     @profile.user = current_user
