@@ -1,0 +1,61 @@
+<div class="container margin">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>
+                <%= @dog.name %>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 gallery-body">
+            <%= link_to image_tag(@dog.image.url(:large)), @dog.image.url %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4>
+                <%= @dog.breed %>
+            </h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 gallery-body">
+            <%= @dog.age %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 gallery-body">
+            <%= @dog.size.name %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 gallery-body">
+            <%= @dog.description %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 gallery-body">
+            <%= @dog.availability %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 gallery-body">
+            <%= @dog.suburb %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 gallery-body">
+            <%= @dog.postal_code %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= link_to 'Edit', edit_dog_path(@dog),class: 'btn btn-info' %>
+                <%= link_to 'Delete', dog_path(@dog), method: :delete,
+                                              data:{confirm: 'Are you sure you want to delete?'},class: 'btn btn-danger'  %>
+        </div>
+    </div>
+</div>

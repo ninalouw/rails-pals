@@ -5,11 +5,12 @@ class DogsController < ApplicationController
 
   def new
     @dog = Dog.new
+    @size = Size.all
   end
 
-  # handles creating the gallery after the form has been submitted
   def create
     @dog = Dog.new(dog_params)
+    @size = Size.all
     @dog.user = current_user
     if @dog.save
         flash[:success] = 'New dog profile created!'
@@ -25,6 +26,7 @@ class DogsController < ApplicationController
 
   def index
     @dogs = Dog.order(created_at: :desc)
+    @sizes = Size.all
   end
 
   def edit
@@ -51,9 +53,8 @@ class DogsController < ApplicationController
     @dog = Dog.find params[:id]
   end
 
-  # gallery_params method used for defining params in create and update
   def dog_params
-    params.require(:dog).permit(:name, :breed, :age, :size, :description,:availability,:suburb, :postal_code, :image)
+    params.require(:dog).permit(:name, :breed, :age, :size_id, :description,:availability,:suburb, :postal_code, :image)
   end
 
 #   def authorize_access

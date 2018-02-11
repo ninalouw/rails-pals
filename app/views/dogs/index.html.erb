@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="text-center">
+        <h1 class="line-header">Dog Profiles</h1>
+    </div>
+    <section id="profile-index">
+        <div class="row">
+            <% @dogs.each do |p| %>
+                <div class='category col-lg-4 col-md-4 col-sm-6 col-xs-6 card-mobile'>
+                    <div class='card'>
+                        <%= image_tag(p.image.url(:large), class: 'img-fluid gallery-img') %>
+                            <div class='card-body'>
+                                <h4 class='card-title'>
+                                    <%= p.name %>
+                                </h4>
+                                <span>
+                                    <p class="text-muted">
+                                        <%= p.breed %>
+                                    </p>
+                                    <p class="text-muted">
+                                        <%= p.size.name %>
+                                    </p>
+                                    <p class="text-muted">
+                                        <%= p.age %>
+                                    </p>
+                                </span>
+                                <span>
+                                    <p class="text-muted">
+                                        <%= p.availability %>
+                                    </p>
+                                    <p class="text-muted">
+                                        <%= p.suburb %>
+                                    </p>
+                                    <p class="text-muted">
+                                        <%= p.postal_code %>
+                                    </p>
+                                </span>
+                                <p class='card-text'>
+                                    <%= p.description %>
+                                </p>
+                                <%= link_to 'Edit', edit_profile_path(p),class: 'btn btn-info' %>
+                                    <%= link_to 'Delete', profile_path(p), method: :delete,
+                                                        data:{confirm: 'Are you sure you want to delete?'},class: 'btn btn-danger'  %>
+                            </div>
+                    </div>
+                </div>
+                <% end %>
+        </div>
+    </section>
+</div>

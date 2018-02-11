@@ -20,7 +20,6 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    # find_gallery method gets called here
   end
 
   def index
@@ -28,11 +27,9 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    # find_gallery method gets called here
   end
 
   def update
-    # find_gallery method gets called here
     if @profile.update(profile_params)
         flash[:success] = 'Profile item updated!'
         redirect_to profile_path(@profile)
@@ -48,14 +45,11 @@ class ProfilesController < ApplicationController
     redirect_to profiles_path , notice: 'profile item deleted'
   end
 
-  # Methods created to refactor code
   private
-  # find_gallery method, gets called on :show, :edit, :update, :destroy
   def find_profile
     @profile = Profile.find params[:id]
   end
 
-  # gallery_params method used for defining params in create and update
   def profile_params
     params.require(:profile).permit(:screen_name, :description, :occupation,:suburb, :postal_code, :image)
   end

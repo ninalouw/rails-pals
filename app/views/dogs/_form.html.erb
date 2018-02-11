@@ -1,11 +1,11 @@
 <div class="container">
     <div class="col-md-12 col-lg-12">
-    <%= form_for(@profile, html: { multipart: true, class: 'form-horizontal' }) do |p| %>
-        <% if @profile.errors.any? %>
+    <%= form_for(@dog, html: { multipart: true, class: 'form-horizontal' }) do |p| %>
+        <% if @dog.errors.any? %>
         <div class="bg-warning" id="error_explanation">
-        <h6><%= pluralize(@profile.errors.count, "error") %> prohibited this announcement from being saved:</h6>
+        <h6><%= pluralize(@dog.errors.count, "error") %> prohibited this dog profile from being saved:</h6>
             <ul>
-            <% @profile.errors.full_messages.each do |message| %>
+            <% @dog.errors.full_messages.each do |message| %>
             <li><%= message %></li>
         <% end %>
             </ul>
@@ -14,8 +14,8 @@
 
         <div class="form-group row">
             <div class="col-md-6 col-lg-6">
-            <%= p.label :screen_name, class: 'control-label' %>
-            <%= p.text_field :screen_name, class: 'form-control'%>
+            <%= p.label :name, class: 'control-label' %>
+            <%= p.text_field :name, class: 'form-control'%>
             </div>
         </div>
 
@@ -25,7 +25,24 @@
                 <%= p.file_field :image %>
             </div>
         </div>
-
+        <div class="form-group row">
+            <div class="col-md-6 col-lg-6">
+                <%= p.label :breed, class: 'control-label' %>
+                    <%= p.text_area :breed, class: 'form-control'%>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6 col-lg-6">
+                <%= p.label :age, class: 'control-label' %>
+                    <%= p.text_area :age, class: 'form-control'%>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6 col-lg-6">
+            <%= p.label :size_id, class: 'control-label dropdown-label'%>
+            <%= p.collection_select :size_id, @size, :id, :name %>
+            </div>
+        </div>
         <div class="form-group row">
             <div class="col-md-6 col-lg-6">
             <%= p.label :description, class: 'control-label' %>
@@ -33,16 +50,17 @@
             </div>
         </div>
 
+
         <div class="form-group row">
             <div class="col-md-6 col-lg-6">
-                <%= p.label :occupation, class: 'control-label' %>
-                <%= p.text_area :occupation, class: 'form-control'%>
+            <%= p.label :availability, class: 'control-label' %>
+            <%= p.text_area :availability, class: 'form-control'%>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-6 col-lg-6">
-            <%= p.label :suburb, class: 'control-label' %>
-            <%= p.text_area :suburb, class: 'form-control'%>
+                <%= p.label :suburb, class: 'control-label' %>
+                    <%= p.text_area :suburb, class: 'form-control'%>
             </div>
         </div>
         <div class="form-group row">
