@@ -7,8 +7,8 @@
   font-family: 'Font Awesome 5 Pro';
   font-style: normal;
   font-weight: 900;
-  src: font-url('fa-solid-900.eot');
-  src: font-url('fa-solid-900.eot?#iefix') format('embedded-opentype'), url('fa-solid-900.woff2') format('woff2'), url('fa-solid-900.woff') format('woff'), url('fa-solid-900.ttf') format('truetype'), url('fa-solid-900.svg#fontawesome') format('svg');
+  src: url(/assets/fa-solid-900.eot);
+  src: url(/assets/fa-solid-900.eot?#iefix) format('embedded-opentype'), url(/assets/fa-solid-900.woff2) format('woff2'), url(/assets/fa-solid-900.woff) format('woff'), url(/assets/fa-solid-900.ttf) format('truetype'), url(/assets/fa-solid-900.svg#fontawesome) format('svg');
 }
 
 .fa,
