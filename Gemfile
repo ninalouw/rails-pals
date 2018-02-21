@@ -15,7 +15,8 @@ gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+# gem 'uglifier', '>= 1.3.0'
+# gem 'browserify-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -42,6 +43,9 @@ gem 'devise'
 gem "paperclip", "~> 5.2.1"
 gem 'aws-sdk',   '~> 2.6'
 gem 'figaro'
+
+
+gem 'webpacker', '~> 3.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

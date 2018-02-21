@@ -9,7 +9,7 @@
         %li.nav-item= link_to 'View your profile', profiles_path, class:'nav-link'
       - else
         %li.nav-item= link_to 'Create your profile', new_profile_path, class:'nav-link'
-      - if @user.dogs
+      - if @user.dogs.any?
         %li.nav-item= link_to 'View your dogs', dogs_path, class:'nav-link'
       - else
         %li.nav-item= link_to 'Add your dog', new_dog_path, class:'nav-link'
