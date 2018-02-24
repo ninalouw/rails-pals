@@ -27,7 +27,12 @@ class DogsController < ApplicationController
   def index
     @dogs = Dog.order(created_at: :desc)
     @sizes = Size.all
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render :json => @dogs }
+    # end
   end
+
 
   def edit
   end

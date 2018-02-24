@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="text-center">
+        <h1 class="line-header">Dog Profiles</h1>
+    </div>
+
+    <div id='find-dog'>
+        <find-dog :dogs="<%= @dogs %>" inline-template>
+            <div v-for="dog in dogs" :key="dog.id" class="row">
+                <div class='category col-lg-4 col-md-4 col-sm-6 col-xs-6 card-mobile'>
+                    <div class='card'>
+                        <div class='card-body'>
+                            <h4 class='card-title'>
+                                {{dog.name}}
+                            </h4>
+                            <span>
+                                <p class="text-muted">
+                                    {{dog.breed}}
+                                </p>
+                                <p class="text-muted">
+                                    {{dog.size.name}}
+                                </p>
+                                <p class="text-muted">
+                                    {{dog.age}}
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </find-dog>
+    </div>

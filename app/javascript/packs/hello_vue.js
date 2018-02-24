@@ -5,18 +5,18 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-import Vue from 'vue'
-import App from '../app.vue'
+// import Vue from 'vue'
+// import App from '../app.vue'
 
-document.addEventListener('DOMContentLoaded', () => {
-  const el = document.body.appendChild(document.createElement('hello'))
-  const app = new Vue({
-    el,
-    render: h => h(App)
-  })
+// document.addEventListener('DOMContentLoaded', () => {
+//   const el = document.body.appendChild(document.createElement('hello'))
+//   const app = new Vue({
+//     el,
+//     render: h => h(App)
+//   })
 
-  console.log(app)
-})
+//   console.log(app)
+// })
 
 
 // The above code uses Vue without the compiler, which means you cannot
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // import Vue from 'vue/dist/vue.esm'
 // import App from '../app.vue'
-//
+
 // document.addEventListener('DOMContentLoaded', () => {
 //   const app = new Vue({
 //     el: '#hello',
@@ -54,18 +54,40 @@ document.addEventListener('DOMContentLoaded', () => {
 //
 // Then uncomment the code block below:
 //
-// import TurbolinksAdapter from 'vue-turbolinks';
+import TurbolinksAdapter from 'vue-turbolinks';
+import Vue from 'vue/dist/vue.esm'
+import App from '../app.vue'
+
+Vue.use(TurbolinksAdapter)
+
+document.addEventListener('turbolinks:load', () => {
+  var element = document.getElementById("dogs")
+  if (element != null) {
+    var vueapp = new Vue({
+      el: element,
+      template: "<App/>",
+      components: { App }
+    });
+  }
+});
 // import Vue from 'vue/dist/vue.esm'
-// import App from '../app.vue'
-//
-// Vue.use(TurbolinksAdapter)
-//
+// import TurbolinksAdapter from 'vue-turbolinks'
+// import VueResource from 'vue-resource'
+
+// Vue.use(VueResource)
+
 // document.addEventListener('turbolinks:load', () => {
-//   const app = new Vue({
-//     el: '#hello',
-//     data: {
-//       message: "Can you say hello?"
-//     },
-//     components: { App }
-//   })
+//   Vue.http.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+//   var element = document.getElementById("dogs");
+
+//   if (element != null) {
+//     // var dogs = JSON.parse(element.dataset.dogs);
+//     const vueapp = new Vue({
+//       el: element,
+//       mixins: [TurbolinksAdapter],
+//       data: function () {
+//         return { dogs: dogs }
+//       },
+//     })
+//   }
 // })
