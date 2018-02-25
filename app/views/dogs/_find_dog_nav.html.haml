@@ -1,0 +1,26 @@
+%nav#find-dog-navbar.navbar.navbar-expand-lg.navbar-light.bg-faded
+  %button.navbar-toggler{type:'button', 'data-toggle':'collapse', 'data-target':'#find-dog-navbar','aria-controls':'navbarNav', 'aria-expanded':'false', 'aria-label':'Toggle navigation'}
+    %span.navbar-toggler-icon
+  #find-dog-navbar.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.dropdown
+        %a.nav-link.dropdown-toggle{href:'#', id:"navbarDropdownMenuLink", 'data-toggle':'dropdown', 'aria-haspopup':'true', 'aria-expanded':'false'} Distance from #{current_user.profile.postal_code}
+        .dropdown-menu{'aria-labelledby':'navbarDropdownMenuLink'}
+          %a.dropdown-item{href:'#'} 2 km
+          %a.dropdown-item{href:'#'} 5 km
+          %a.dropdown-item{href:'#'} 10 km
+          %a.dropdown-item{href:'#'} 15 km
+      %li.nav-item.dropdown
+        %a.nav-link.dropdown-toggle{href:'#', id:"navbarDropdownMenuLink", 'data-toggle':'dropdown', 'aria-haspopup':'true', 'aria-expanded':'false'} Dog Breed
+        .dropdown-menu{'aria-labelledby':'navbarDropdownMenuLink'}
+          %a.dropdown-item{href:'#'} Retriever
+          %a.dropdown-item{href:'#'} Cocker Spaniel
+          %a.dropdown-item{href:'#'} German Shepherd
+          %a.dropdown-item{href:'#'} Toller
+      %li.nav-item.dropdown
+        %a.nav-link.dropdown-toggle{href:'#', id:"navbarDropdownMenuLink", 'data-toggle':'dropdown', 'aria-haspopup':'true', 'aria-expanded':'false'} Dog Size
+        .dropdown-menu{'aria-labelledby':'navbarDropdownMenuLink'}
+          %a.dropdown-item{href:'#'} Small
+          %a.dropdown-item{href:'#'} Medium
+          %a.dropdown-item{href:'#'} Large
+      %li.nav-item= link_to 'Search',dogs_path, class:'btn btn-secondary'

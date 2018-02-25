@@ -20,7 +20,7 @@
                 %p{class:'card-text'} The body of your message.The body of your message.
                 = link_to 'Reply', dogs_path, class: 'btn btn-secondary'
       .col-lg-6.col-md-6.col-sm-6.col-xs-12.card-mobile
-        %h3{class:'card-header'} Your Recently Added Dogs
+        %h3{class:'card-header'} Recently Added Dogs
         .row.d-flex.justify-content-center.align-items-center#dog-card
           - if @user.dogs.any?
             - @user.dogs.each do |d|

@@ -1,6 +1,7 @@
-%container#find-dog
+= render 'find_dog_nav'
+.container-fluid#find-dog
   %div
-    %h1{class: 'text-center line-header'}Dogs in your area
+    %h2{class: 'text-center line-header '} Dogs in your area
     #dogs-index
       .row
         - @dogs.each do |d|
@@ -14,14 +15,15 @@
                     %i{class: 'fas fa-paw'}
                     = d.breed
                 %h6{class:'card-subtitle mb-4'}
-                  %span= d.size.name
+                  %span= "#{d.size.name}-size"
                   %span
                     %i{class: 'fas fa-map-marker-alt'}
                     = d.suburb
                 %h6{class:'card-text mb-4'}
-                  %span= d.age
+                  %span= "#{d.age} yo"
                   %span
                     %i{class: 'far fa-calendar-check'}
                     = d.availability
                 %p{class:'card-text'}= d.description
                 = link_to 'View Dog', dog_path(d), class: 'btn btn-secondary'
+                = link_to 'Send Message', dog_path(d), class: 'btn btn-primary'

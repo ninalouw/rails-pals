@@ -4,8 +4,16 @@
 #find-dog {
     margin-top: $margin;
     margin-bottom: $margin;
-    h1 {
+    h2 {
         margin-bottom: 2rem;
+    }
+}
+#find-dog-navbar {
+    background-color: $borrower-l-blue;
+    .nav-item {
+        .dropdown-toggle {
+            color: white;
+        }
     }
 }
 #dogs-index {
