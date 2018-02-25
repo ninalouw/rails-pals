@@ -1,29 +1,13 @@
-%nav#user-nav.navbar.navbar-expand-lg.navbar-light.bg-faded
-  %button.navbar-toggler{type:'button', 'data-toggle':'collapse', 'data-target':'#user-navbar','aria-controls':'navbarNav', 'aria-expanded':'false', 'aria-label':'Toggle navigation'}
-    %span.navbar-toggler-icon
-  #user-navbar.collapse.navbar-collapse
-    %ul.navbar-nav.mr-auto
-      %li.nav-item= link_to 'Dashboard', account_path, class:'nav-link'
-      -# %li.nav-item= link_to 'Inbox', class:'nav-link'
-      - if @user.profile
-        %li.nav-item= link_to 'View your profile', profiles_path, class:'nav-link'
-      - else
-        %li.nav-item= link_to 'Create your profile', new_profile_path, class:'nav-link'
-      - if @user.dogs.any?
-        %li.nav-item= link_to 'View your dogs', dogs_path, class:'nav-link'
-      - else
-        %li.nav-item= link_to 'Add your dog', new_dog_path, class:'nav-link'
-      -# %li.nav-item= link_to 'Favourites', class:'nav-link'
-
+= render 'user_nav'
 %section#user-account
   .container-fluid.px-md-5
     .row
       .col-12.col-lg-6
         #welcome-user-row
-          %h1
+          %h3
             Welcome
             = "#{current_user.email}!"
-            %h6 Here are your latest messages
+            %h5 Here are your latest messages
     .row.dashboard-duo
       .col-lg-6.col-md-6.col-sm-6.col-xs-6.card-mobile
         .card
@@ -34,14 +18,9 @@
               %p{class:'lead'} From: Message sender
               %p{class:'card-text'} The body of your message.The body of your message.
               %button{class: 'btn btn-secondary'} Reply
-            .card.w-10.col-lg-5.col-md-5.col-sm-5.col-xs-12
-              %h4{class:'card-title'} The title
-              %p{class:'lead'} From: Message sender
-              %p{class:'card-text'} The body of your message.The body of your message.
-              %button{class: 'btn btn-secondary'} Reply
       .col-lg-6.col-md-6.col-sm-6.col-xs-6.card-mobile
         .card
-          %h3{class:'card-header'} Recently Added Dogs
+          %h3{class:'card-header'} Your Recently Added Dogs
           .card-block.row.d-flex.justify-content-center.align-items-center
           - if @user.dogs.any?
             - @user.dogs.each do |d|

@@ -20,13 +20,16 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @user = current_user
   end
 
   def index
+    @user = current_user
     @profiles = Profile.order(created_at: :desc)
   end
 
   def edit
+    @user = current_user
   end
 
   def update
