@@ -9,39 +9,38 @@
             = "#{current_user.email}!"
             %h5 Here are your latest messages
     .row.dashboard-duo
-      .col-lg-6.col-md-6.col-sm-6.col-xs-6.card-mobile
-        .card
-          %h3{class:'card-header'} Your Messages
-          .card-block.row.d-flex.justify-content-center.align-items-center
-            .card.w-10.col-lg-5.col-md-5.col-sm-5.col-xs-12
-              %h4{class:'card-title'} The title
-              %p{class:'lead'} From: Message sender
-              %p{class:'card-text'} The body of your message.The body of your message.
-              %button{class: 'btn btn-secondary'} Reply
-      .col-lg-6.col-md-6.col-sm-6.col-xs-6.card-mobile
-        .card
-          %h3{class:'card-header'} Your Recently Added Dogs
-          .card-block.row.d-flex.justify-content-center.align-items-center
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.card-mobile
+        %h3{class:'card-header'} Your Messages
+        .row.d-flex.justify-content-center.align-items-center.card-body#messages-card
+          .col-lg-6.col-md-6.col-sm-6.col-xs-12
+            .card
+              .card-body
+                %h4{class:'card-title'} The title
+                %p{class:'lead'} From: Message sender
+                %p{class:'card-text'} The body of your message.The body of your message.
+                = link_to 'Reply', dogs_path, class: 'btn btn-secondary'
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.card-mobile
+        %h3{class:'card-header'} Your Recently Added Dogs
+        .row.d-flex.justify-content-center.align-items-center#dog-card
           - if @user.dogs.any?
             - @user.dogs.each do |d|
-              #dog-card
-                .col-lg-6.col-md-6.col-sm-6.col-xs-6.card-mobile
-                  .card.user-dog-card
-                    = image_tag d.image.url(:large), :class => 'card-img-top img-fluid', :alt => 'card image'
-                    .card-body
-                      %h4{class:'card-title text-left'}
-                        %span= d.name
-                        %span
-                          %i{class: 'fas fa-paw'}
-                          = d.size.name
-                      %h6{class:'card-subtitle mb-2 text-left'}
-                        %span= d.breed
-                        %span
-                          %i{class: 'fas fa-map-marker-alt'}
-                          = d.suburb
-                      %h6{class:'card-subtitle mb-2 text-left'}
-                        %span= d.age
-                        %span
-                          %i{class: 'far fa-calendar-check'}
-                          = d.availability
-                      = link_to 'View Dog', dog_path(d), class: 'btn btn-secondary'
+              .col-lg-6.col-md-5.col-sm-5.col-xs-12.card-mobile
+                .card.w-22.user-dog-card
+                  = image_tag d.image.url(:large), :class => 'card-img-top img-fluid', :alt => 'card image'
+                  .card-body
+                    %h4{class:'card-title text-left'}
+                      %span= d.name
+                      %span
+                        %i{class: 'fas fa-paw'}
+                        = d.size.name
+                    %h6{class:'card-subtitle mb-2 text-left'}
+                      %span= d.breed
+                      %span
+                        %i{class: 'fas fa-map-marker-alt'}
+                        = d.suburb
+                    %h6{class:'card-subtitle mb-2 text-left'}
+                      %span= d.age
+                      %span
+                        %i{class: 'far fa-calendar-check'}
+                        = d.availability
+                    = link_to 'View Dog', dog_path(d), class: 'btn btn-secondary'

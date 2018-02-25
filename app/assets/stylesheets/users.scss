@@ -17,6 +17,18 @@
         }
     }
 }
+.card-header {
+    background-color: $borrower-l-blue;
+    color: white;
+}
+#messages-card {
+    .card {
+        margin-bottom: 10px;
+        background-color: $white;
+        border: 1px solid $white;
+        @include soft-shadow;
+    }
+}
 #dog-card {
     .card.user-dog-card {
         align-items: center;
