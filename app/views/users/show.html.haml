@@ -24,18 +24,24 @@
           .card-block.row.d-flex.justify-content-center.align-items-center
           - if @user.dogs.any?
             - @user.dogs.each do |d|
-              .card.col-lg-6.col-md-6.col-sm-6.col-xs-12
-                = image_tag d.image.url(:large), :class => 'card-img-top img-circle img-fluid', :alt => 'card image'
-                .card-body
-                  %h4{class:'card-title'}= d.name
-                  %span
-                    %p{class: 'text-muted'}= d.breed
-                    %p{class: 'text-muted'}= d.size.name
-                  %span
-                    %p{class: 'text-muted'}= d.age
-                    %p{class: 'text-muted'}= d.availability
-                  %span
-                    %p{class: 'text-muted'}= d.suburb
-                    %p{class: 'text-muted'}= d.postal_code
-                  %p{class:'lead'}= d.description
-                  = link_to 'View Dog', dog_path(d), class: 'btn btn-secondary'
+              #dog-card
+                .col-lg-6.col-md-6.col-sm-6.col-xs-6.card-mobile
+                  .card.user-dog-card
+                    = image_tag d.image.url(:large), :class => 'card-img-top img-fluid', :alt => 'card image'
+                    .card-body
+                      %h4{class:'card-title text-left'}
+                        %span= d.name
+                        %span
+                          %i{class: 'fas fa-paw'}
+                          = d.size.name
+                      %h6{class:'card-subtitle mb-2 text-left'}
+                        %span= d.breed
+                        %span
+                          %i{class: 'fas fa-map-marker-alt'}
+                          = d.suburb
+                      %h6{class:'card-subtitle mb-2 text-left'}
+                        %span= d.age
+                        %span
+                          %i{class: 'far fa-calendar-check'}
+                          = d.availability
+                      = link_to 'View Dog', dog_path(d), class: 'btn btn-secondary'

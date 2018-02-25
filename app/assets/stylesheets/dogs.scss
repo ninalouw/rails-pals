@@ -1,3 +1,41 @@
 // Place all the styles related to the Dogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#find-dog {
+    margin-top: $margin;
+    margin-bottom: $margin;
+    h1 {
+        margin-bottom: 2rem;
+    }
+}
+#dogs-index {
+    .card.dog-index-card {
+        // align-items: center;
+        margin-bottom: 10px;
+        background-color: $white;
+        border: 1px solid $white;
+        @include soft-shadow;
+        .card-img-top {
+            width: 100%; // height: 500px;
+        }
+        .card-body {
+            padding: 1.8rem;
+            span {
+                padding-right: 5px;
+            }
+        }
+        .fa-paw {
+            color: $orange;
+            &:hover {
+                color: $yellow;
+                cursor: pointer;
+            }
+        }
+        .fa-map-marker-alt {
+            color: $turquoise;
+        }
+        .far {
+            color: $turquoise;
+        }
+    }
+}

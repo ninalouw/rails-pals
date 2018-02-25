@@ -1,0 +1,27 @@
+%container#find-dog
+  %div
+    %h1{class: 'text-center line-header'}Dogs in your area
+    #dogs-index
+      .row
+        - @dogs.each do |d|
+          .col-lg-4.col-md-4.col-sm-6.col-xs-12.card-mobile
+            .card.dog-index-card
+              = image_tag d.image.url(:large), :class => 'card-img-top img-fluid', :alt => 'card image'
+              .card-body
+                %h4{class:'card-title mb-4'}
+                  %span= d.name
+                  %span
+                    %i{class: 'fas fa-paw'}
+                    = d.breed
+                %h6{class:'card-subtitle mb-4'}
+                  %span= d.size.name
+                  %span
+                    %i{class: 'fas fa-map-marker-alt'}
+                    = d.suburb
+                %h6{class:'card-text mb-4'}
+                  %span= d.age
+                  %span
+                    %i{class: 'far fa-calendar-check'}
+                    = d.availability
+                %p{class:'card-text'}= d.description
+                = link_to 'View Dog', dog_path(d), class: 'btn btn-secondary'

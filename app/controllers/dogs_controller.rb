@@ -35,6 +35,7 @@ class DogsController < ApplicationController
 
 
   def edit
+    @size = Size.all
   end
 
   def update
