@@ -3,7 +3,11 @@ Rails.application.configure do
   config.webpacker.check_yarn_integrity = false
 
   # Settings specified here will take precedence over those in config/application.rb.
-  config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
+  # Add the font path
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+  # Include font files to Assets
+  config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   # Code is not reloaded between requests.
   config.cache_classes = true
 
