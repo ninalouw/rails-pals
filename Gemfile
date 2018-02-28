@@ -35,6 +35,7 @@ gem 'font-awesome-rails'
 gem 'cowsay'
 gem 'faker'
 gem 'haml'
+gem 'cancancan', '~> 2.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

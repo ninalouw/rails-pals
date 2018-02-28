@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :find_profile, only: [:show, :edit, :update, :destroy]
-#   before_action :authorize_access, only: [:show, :edit, :update, :destroy]
+  before_action :find_profile, only: [ :show, :edit, :update, :destroy]
+  before_action :authorize_access, only: [:show, :edit, :update, :destroy]
 
   def new
     @profile = Profile.new
@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
 
   def index
     @user = current_user
-    @profiles = Profile.order(created_at: :desc)
+    @profile = current_user.profile
   end
 
   def edit
@@ -57,9 +57,9 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit(:screen_name, :description, :occupation,:suburb, :postal_code, :image)
   end
 
-#   def authorize_access
-#     unless can? :manage, @gallery
-#       redirect_to root_path, alert: 'Access Denied.'
-#      end
-#   end
+  def authorize_access
+    unless can? :manage, @profile
+      redirect_to root_path, alert: 'Access Denied.'
+     end
+  end
 end

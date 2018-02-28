@@ -1,7 +1,7 @@
 class DogsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :find_dog, only: [:show, :edit, :update, :destroy]
-#before_action :authorize_access, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_access, only: [:edit, :update, :destroy]
 
   def new
     @dog = Dog.new
@@ -27,10 +27,6 @@ class DogsController < ApplicationController
   def index
     @dogs = Dog.order(created_at: :desc)
     @sizes = Size.all
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render :json => @dogs }
-    # end
   end
 
 
@@ -63,9 +59,9 @@ class DogsController < ApplicationController
     params.require(:dog).permit(:name, :breed, :age, :size_id, :description,:availability,:suburb, :postal_code, :image)
   end
 
-#   def authorize_access
-#     unless can? :manage, @gallery
-#       redirect_to root_path, alert: 'Access Denied.'
-#      end
-#   end}
+  def authorize_access
+    unless can? :manage, @dog
+      redirect_to root_path, alert: 'You cannot edit this dog.'
+     end
+  end
 end

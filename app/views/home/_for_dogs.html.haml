@@ -7,18 +7,18 @@
           .card-body
             %h4{class:'card-title'} For dog lovers
             %p{class:'card-text'} Enjoy playing with local dogs. Make a dog’s day and help out a busy dog owner.
-            %button{class: 'btn btn-secondary'} Get started as a borrower
+            = link_to 'Get started as a borrower', new_user_registration_path, class:'btn btn-secondary my-2 my-sm-0'
       .col-lg-4.col-md-4.col-sm-4.col-xs-4.card-mobile
         .card
           = image_tag "owner-dog.jpg", :class => 'card-img-top img-circle img-fluid', :alt => 'card image'
           .card-body
             %h4{class:'card-title'} For dog owners
             %p{class:'card-text'} Find a trusted local dog lover to give your dog extra walks and love.
-            %button{class: 'btn btn-secondary'} Get started as an owner
+            = link_to 'Get started as an owner', new_user_registration_path, class:'btn btn-secondary my-2 my-sm-0'
       .col-lg-4.col-md-4.col-sm-4.col-xs-4.card-mobile
         .card
           = image_tag "shelter-dog.jpg", :class => 'card-img-top img-circle img-fluid', :alt => 'card image'
           .card-body
             %h4{class:'card-title'} For shelter dogs
             %p{class:'card-text'} Improve the life of a shelter dog by giving it some much needed TLC!
-            %button{class: 'btn btn-secondary'} View rescue dogs
+            = link_to 'View rescue dogs', new_user_registration_path, class:'btn btn-secondary my-2 my-sm-0'

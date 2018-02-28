@@ -1,0 +1,34 @@
+.container{class: 'margin'}
+  #dogs-index
+    .row
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12.card-mobile
+        .card.dog-index-card
+          = image_tag @dog.image.url(:large), :class => 'card-img-top img-fluid', :alt => 'card image'
+          .card-body
+            %h4{class:'card-title mb-4'}
+              %span= @dog.name
+              %span
+                %i{class: 'fas fa-paw'}
+                = @dog.breed
+            %h6{class:'card-subtitle mb-4'}
+              %span= "#{@dog.size.name}-size"
+              %span
+                %i{class: 'fas fa-map-marker-alt'}
+                = @dog.suburb
+            %h6{class:'card-text mb-4'}
+              %span= "#{@dog.age} yo"
+              %span
+                %i{class: 'far fa-calendar-check'}
+                = @dog.availability
+            %h6{class:'card-text mb-4'}
+              %span
+                %i{class: 'fas fa-map-marker-alt'}
+                = @dog.postal_code
+            %p{class:'card-text'}= @dog.description
+            %h6{class:'card-text mb-4'} Extra information:
+            %p{class:'card-text'}= @dog.description
+            - if can? :manage, @dog
+              = link_to 'Edit', edit_dog_path(@dog), class: 'btn btn-secondary'
+              = link_to 'Delete', dog_path(@dog), method: :delete,data:{confirm: 'Are you sure you want to delete?'}, class: 'btn btn-danger'
+            - else
+              = link_to 'Send Message', dog_path(@dog), class: 'btn btn-primary'
