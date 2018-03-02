@@ -144,10 +144,20 @@ footer {
     h4 {
         font-size: 1.2rem;
     }
-    .filters {
-        margin: 10px;
+    p {
+        font-size: 0.9rem;
     }
     .card-text {
         font-size: 0.8rem;
+    }
+}
+@media screen and (max-width: 380px) {
+    #main-page-header {
+        h1{
+            font-size:2rem;
+        }
+        p {
+            font-size:1rem;
+        }
     }
 }
